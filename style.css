@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Sofia Sans";
+  src: url("Fonts/Sofia_Sans/static/SofiaSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia Sans";
+  src: url("Fonts/Sofia_Sans/static/SofiaSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia Sans";
+  src: url("Fonts/Sofia_Sans/static/SofiaSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia Sans";
+  src: url("Fonts/Sofia_Sans/static/SofiaSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia Sans";
+  src: url("Fonts/Sofia_Sans/static/SofiaSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia Sans";
+  src: url("Fonts/Sofia_Sans/static/SofiaSans-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Sofia Sans";
+  src: url("Fonts/Sofia_Sans/static/SofiaSans-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+
+
+body {
+  color: #222;
+  font-family: "Sofia Sans";
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* TITLE */
+.page-title {
+  text-align: center;
+
+}
+
+.page-title h1 {
+  font-size: 40px;
+  font-weight: 800;
+  margin: 30px 0;
+
+}
+
+/* PROJECT */
+.project {
+  padding: 10px 0;
+}
+
+.project-preview {
+  text-align: center;
+}
+
+/* MAIN IMAGE */
+.project-main-img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: scale-down;
+  display: block;
+  margin: 0 auto;
+}
+
+/* TITLE */
+.project-title {
+  color: #F19225;
+  margin: 0px 0;
+  font-size: 26px;
+  margin-top: -15px;
+}
+
+/* DIVIDER */
+.divider {
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* ARROW */
+.arrow {
+  width: 38px;
+  display: block;
+  margin: 0 auto;
+  margin-top: -38px; 
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.arrow-link:hover .arrow {
+  transform: translateY(4px);
+}
+
+/* GALLERY */
+.project-gallery {
+  display: flex;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.project-gallery img {
+  width: 50%;
+  height: 380px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.project-gallery img:first-child {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 92%,
+    95% 100%,
+    0 100%
+  );
+}
+
+
+.project-gallery img:last-child {
+  clip-path: polygon(
+    5% 0,
+    100% 0,
+    100% 100%,
+    0 100%,
+    0 8%
+  );
+}
+
+
+.project-category {
+  color: #F28C28; /* оранжевый */
+  font-weight: 700;
+  margin-top: 60px;
+
+}
+
+.project-detail-img {
+  max-width: 160px;
+  max-height: 170px;
+  position: relative;
+  float: right;
+  margin-top: -110px;
+  margin-right: -40px;
+  object-fit: cover;
+}
+
+.project-detail-title {
+
+  color: #F28C28;
+  font-size: 24px;
+  margin-top: 20px;
+  font-weight: 400; 
+
+
+}
+
+.project-detail-address {
+  font-size: 20px;
+  font-weight: 400; 
+  margin-top: 5px;
+  color: #F28C28; 
+}
+
+.project-detail-description {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 14pt;
+}
+
+.project-detail-delivery {
+  margin-top: 20px;
+  float: right;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 14pt;
+  margin-bottom: 40px;
+}
+
+/* CAROUSEL */
+
+.project-carousel {
+  position: relative;
+  width: 100%;
+  margin: 40px 0 70px;
+}
+
+.carousel-window {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+  gap: 0;                     /* ← убираем gap, если используем margin */
+}
+
+.carousel-slide {
+  flex: 0 0 100%;             /* каждый слайд = ширина окна */
+  width: 100%;
+  min-width: 100%;            /* усиливает стабильность */
+  display: flex;
+  justify-content: center;    /* центрируем картинку внутри слайда */
+  align-items: center;
+}
+
+.carousel-slide img {
+  max-width: 100%;
+  max-height: 800px;          /* или твоё значение, но не фиксированная height */
+  width: auto;
+  height: auto;
+  object-fit: contain;        /* ← contain вместо cover — нет обрезки краёв */
+  display: block;
+}
+
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn.prev {
+  left: -16px;          
+}
+
+.carousel-btn.next {
+  right: -16px;         
+}
+
+.carousel-btn img {
+  width: 18px;
+  height: 18px;
+}
